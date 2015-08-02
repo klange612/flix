@@ -1,0 +1,26 @@
+
+Use content tag
+
+
+<% flash.each do |k,v| %>
+<% if flash[k] %>
+content_tag(:p v class: "flash #{k}">)
+  <%= flash[k] %>
+</p>
+<% end %>
+
+<% if flash[:notice] %>
+    <p class="flash notice">
+      <%= flash[:notice] %>
+    </p>
+
+        <p style="color: orange;">
+          <% if flash[:notice] %>
+              <%= flash[:notice] %>
+          <% end %>
+        </p>
+        <p style="color: red;">
+          <% if flash[:danger] %>
+              <%= flash[:danger] %>
+          <% end %>
+        </p>

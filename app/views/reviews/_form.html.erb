@@ -1,0 +1,31 @@
+<%= form_for([@movie, @review]) do |r| %>
+    <%= render 'shared/errors', object: @review %>
+    <fieldset>
+      <ol>
+        <li class="required">
+          <%= r.label :name %>
+          <%= r.text_field :name, autofocus: true %>
+        </li>
+        <li class="required">
+          <%= r.label :stars %>
+          <%= r.select :stars, Review::STARS, prompt: "Pick one" %>
+        </li>
+        <li class="required">
+          <%= r.label :comment %>
+          <%= r.text_area :comment, cols: 40, rows: 7 %>
+        </li>
+        <li class="required">
+          <%= r.label :city %>
+          <%= r.text_field :city, size: 20 %>
+        </li>
+        <li class="required">
+          <%= r.label :state %>
+          <%= r.text_field :state, size:2 %>
+        </li>
+      </ol>
+      <p>
+        <%= r.submit %>
+        <%= link_to "Cancel", movie_path(@movie), class: 'button' %>
+            </p>
+            </fieldset>
+        <% end %>

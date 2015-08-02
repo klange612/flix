@@ -1,0 +1,9 @@
+Show page
+
+<%= @reviews %>
+
+<% @reviews.each do |r| %>
+    <p>Reviewer: <%= r.name %></p>
+    <p>Movie_id: <%= r.movie_id %></p>
+    <p>Comments: </br> <%= r.comment %> </p>
+<% end %>
